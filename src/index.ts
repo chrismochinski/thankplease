@@ -44,5 +44,3 @@ async function addOrUpdateAsset(ticker: string, totalHolding: number = 0) {
     client.release();
   }
 }
-
-addOrUpdateAsset("HNT", 32);

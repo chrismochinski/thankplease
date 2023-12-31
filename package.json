@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node build/index.js",
     "build": "tsc",
-    "server": "nodemon build/index.js",
+    "server": "nodemon -e ts,json --exec ts-node src/index.ts",
     "dev": "concurrently \"npm run server\" \"cd client && npm start\""
   },
   "keywords": [],
