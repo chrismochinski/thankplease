@@ -22,18 +22,37 @@ const pool = new pg_1.Pool({
     user: "chrismochinski",
     host: "localhost",
     database: "thankplease",
-    // password: 'password',
     port: 5432,
 });
-function query() {
+function addOrUpdateAsset(ticker, totalHolding = 0) {
     return __awaiter(this, void 0, void 0, function* () {
         const client = yield pool.connect();
         try {
-            const res = yield client.query("SELECT * FROM user_assets;");
-            console.log(res.rows);
+            // Check if the asset already exists
+            const checkRes = yield client.query("SELECT * FROM user_assets WHERE ticker = $1", [ticker]);
+            if (checkRes.rows.length > 0) {
+                // Asset exists, update its total_holding by adding the new amount
+                const currentTotalHolding = parseFloat(checkRes.rows[0].total_holding);
+                const newTotalHolding = currentTotalHolding + totalHolding;
+                yield client.query("UPDATE user_assets SET total_holding = $1 WHERE ticker = $2", [
+                    newTotalHolding,
+                    ticker,
+                ]);
+            }
+            else {
+                // Asset does not exist, insert it with the provided total_holding (default 0)
+                yield client.query("INSERT INTO user_assets (ticker, total_holding) VALUES ($1, $2)", [
+                    ticker,
+                    totalHolding,
+                ]);
+            }
+        }
+        catch (error) {
+            console.error("Error in addOrUpdateAsset:", error);
         }
         finally {
             client.release();
         }
     });
 }
+addOrUpdateAsset("HNT", 32);
