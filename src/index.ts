@@ -26,6 +26,17 @@ const pool = new Pool({
   port: 5432,
 });
 
+/**
+ * POST /api/transactions
+ * @param {string} ticker - The ticker symbol of the asset
+ * @param {string} quantity - The total amount of the asset held
+ * @param {boolean} isNewTotal - Whether the quantity is a new total or an amount to be added to the current total
+ * @param {string} dateOfTransaction - The date of the transaction
+ * @param {string} timeOfTransaction - The time of the transaction
+ * @param {string} timeZoneOfTransaction - The timezone of the transaction
+ * @returns {string} message - A message indicating whether the transaction was recorded successfully
+ * @throws {string} error - An error message 
+ */
 app.post("/api/transactions", async (req: express.Request, res: express.Response) => {
   const {
     ticker,
@@ -36,6 +47,8 @@ app.post("/api/transactions", async (req: express.Request, res: express.Response
     timeZoneOfTransaction,
   }: TransactionRequest = req.body;
 
+
+  
   try {
     const totalHolding = parseFloat(quantity);
     // Use isNewTotal to determine whether to add or replace the total holding
