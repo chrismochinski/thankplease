@@ -2,6 +2,8 @@ import { Pool } from "pg";
 import express from "express";
 import cors from "cors";
 
+import coinMarketCapRouter from './CoinMarketCap';
+
 interface TransactionRequest {
   ticker: string;
   quantity: string;
@@ -13,9 +15,14 @@ interface TransactionRequest {
 
 const app = express();
 app.use(cors()); // Enable CORS for all routes
+app.use(express.json()); // Enable parsing JSON bodies for all routes
 const port = 3001;
 
-app.get("/", (req, res) => res.send("Welcome to thankplease!"));
+// ------ LIST ROUTERS / APIS / STUFF HERE ------//
+app.use('/api/crypto-data', coinMarketCapRouter);
+
+
+app.get("/", (req, res) => res.send("Welcome to thankplease!")); 
 app.use(express.json());
 app.listen(port, () => console.log(`Server running on http://localhost:${port} wut it dooooooooo`));
 
