@@ -10,9 +10,14 @@ CREATE TABLE user_assets (
     -- Add additional columns here
 );
 
-CREATE TABLE authentication ( 🔳
+//todo
+CREATE TABLE users ( 
+    id SERIAL PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
-    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password_hash NOT NULL,
+    creation_date TIMESTAMP WITH TIME ZONE NOT NULL,
+    creation_time_zone VARCHAR(255) NOT NULL,
     -- Add additional columns here
 );
 
@@ -29,6 +34,23 @@ ALTER TABLE user_assets ADD COLUMN add_activity_type VARCHAR(255); --purchase, e
 ALTER TABLE user_assets ADD COLUMN notes TEXT; --notes about the transaction
 
 
+-- added late as heck on 1/6/24 for user transaction tracking
+
+//todo
+CREATE TABLE user_transactions {
+    transaction_id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES users(id),
+    transaction_ticker VARCHAR(255) NOT NULL,
+    transaction_quantity NUMERIC(12, 6) NOT NULL,
+    transaction_is_new_total BOOLEAN NOT NULL,
+    transaction_type VARCHAR(255) NOT NULL,
+    transaction_date_time TIMESTAMP WITH TIME ZONE NOT NULL,
+    transaction_time_zone VARCHAR(255) NOT NULL,
+    transaction_source VARCHAR(255), -- source or app of purchase or earn/mine/mint
+    transaction_activity_type VARCHAR(255), -- purchase, earn, mine, mint, driving, running, etc
+    notes TEXT
+};
+
 
 /* 
 common queries
@@ -40,4 +62,29 @@ INSERT INTO user_assets (ticker) VALUES ('BTC');
 -- remove asset by ticker
 DELETE FROM user_assets WHERE TICKER = 'THETA';
 
+-- SAMPLE QUERY INTO ALL OF THE user_transactions TABLE:
+
+INSERT INTO user_transaction (
+    transaction_ticker, 
+    transaction_quantity, 
+    transaction_is_new_total, 
+    transaction_type, 
+    transaction_date_time, 
+    transaction_time_zone, 
+    user_id, 
+    transaction_source, 
+    transaction_activity_type, 
+    notes
+) VALUES (
+    'BTC', 
+    0.5, 
+    TRUE, 
+    'Purchase', 
+    CURRENT_TIMESTAMP, 
+    'UTC', 
+    (SELECT user_id FROM users WHERE username = 'Mo'), 
+    'CoinGecko', 
+    'Purchase', 
+    'Initial Test Transaction'
+);
 
