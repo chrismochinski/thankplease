@@ -2,11 +2,12 @@ import axios from "axios";
 import express from "express";
 
 const router = express.Router();
-const API_KEY = "06d90b90-3866-443e-89e6-1e694c9019d2";
+const API_KEY = process.env.COINGECKO_API_KEY;
 
-router.get("/", async (req, res) => {
+
+router.get("/list", async (req, res) => {
   try {
-    const url = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest";
+    const url = "https://api.coingecko.com/api/v3/coins/list";
     const headers = {
       "X-CMC_PRO_API_KEY": API_KEY,
       Accept: "application/json",
@@ -14,7 +15,8 @@ router.get("/", async (req, res) => {
 
     // Axios request
     const cmcResponse = await axios.get(url, { headers });
-    res.json(cmcResponse.data); // Access the data property of the response
+    res.json(cmcResponse.data);
+    console.log('CMC BASIC RESPONSE SUCCESS!')
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({ error: "Error fetching data" });
