@@ -55,8 +55,8 @@ async function recordTransaction(requestData: NewUserAssetRequest, user: number)
     await client.query(
       `
       INSERT INTO user_transactions 
-      (user_id, transaction_ticker, transaction_quantity, transaction_is_new_total, transaction_type, transaction_date_time, transaction_time_zone) 
-      VALUES ($1, $2, $3, $4, $5, $6, $7)`,
+      (user_id, transaction_ticker, transaction_quantity, transaction_is_new_total, transaction_type, transaction_date_time, transaction_time_zone, notes) 
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
       [
         user,
         requestData.ticker,
@@ -65,6 +65,7 @@ async function recordTransaction(requestData: NewUserAssetRequest, user: number)
         requestData.transactionType,
         new Date(`${requestData.dateOfTransaction} ${requestData.timeOfTransaction}`),
         requestData.timeZoneOfTransaction,
+        'New asset via New Asset Form - APP BUILDING IN PROGRESS'
       ]
     );
   } catch (error) {
