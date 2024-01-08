@@ -10,6 +10,7 @@ interface NewUserAssetRequest {
   dateOfTransaction: string;
   timeOfTransaction: string;
   timeZoneOfTransaction: string;
+  notes: string;
 }
 
 // Initialize the router

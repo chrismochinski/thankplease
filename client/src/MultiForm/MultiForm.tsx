@@ -2,13 +2,18 @@ import { useState } from "react";
 import "../GlobalStyles.scss";
 import "./MultiForm.scss";
 import { OrangeButton } from "../Buttons/OrangeButton";
+import { TransactionType } from "../Home/Home";
 
-export function MultiForm(): JSX.Element {
+interface MultiFormProps {
+  transactionType: TransactionType;
+}
+
+export function MultiForm(props: MultiFormProps): JSX.Element {
+  const { transactionType } = props;
   const [user, setUser] = useState("Mo"); // TODO: BUILD INTO AUTH SYSTEM
   const [ticker, setTicker] = useState("");
   const [quantity, setQuantity] = useState("");
   const [isNewTotal, setIsNewTotal] = useState(false);
-  const [transactionType, setTransactionType] = useState(""); // Add New Asset, Increase, Decrease, Remove Asset
   const [transactionSource, setTransactionSource] = useState(""); // coinbase, binance, kraken, stepn, sweat, etc
   const [transactionActivity, setTransactionActivity] = useState(""); // buy, run, mine, mint, etc
   const [transactionNotes, setTransactionNotes] = useState(""); // "Bought on Coinbase while I was cooking some bacon for my pet snake"
@@ -22,20 +27,8 @@ export function MultiForm(): JSX.Element {
     const currentDate = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
     const currentTime = new Date().toTimeString().split(" ")[0]; // HH:MM:SS
 
-    // Convert quantity to a
+    // Convert quantity to a number, zero if none provided
     const numericQuantity = parseFloat(quantity) || 0;
-
-    console.log("user is:", user);
-    console.log("ticker is:", ticker);
-    console.log("quantity:", quantity);
-    console.log("isNewTotal:", isNewTotal);
-    console.log("dateOfTransaction:", currentDate);
-    console.log("timeOfTransaction:", currentTime);
-    console.log("timeZoneOfTransaction:", currentTimeZone);
-    console.log("transactionType:", transactionType);
-    console.log("transactionSource:", transactionSource);
-    console.log("transactionActivity:", transactionActivity);
-    console.log("transactionNotes:", transactionNotes);
 
     const payload = {
       ticker,
@@ -47,6 +40,7 @@ export function MultiForm(): JSX.Element {
       timeZoneOfTransaction: currentTimeZone,
       transactionSource,
       transactionActivity,
+      transactionNotes,
     };
     try {
       const response = await fetch("http://localhost:3001/api/transactions", {
@@ -117,6 +111,18 @@ export function MultiForm(): JSX.Element {
           onChange={(e) => setTransactionNotes(e.target.value)}
           placeholder="Notes"
         />
+        <div className="switchContainer">
+          <div className="switchLabel">
+            <span className={!isNewTotal ? "activeLabel" : ""}>Total</span>
+          </div>
+          <label className="switch">
+            <input type="checkbox" checked={isNewTotal} onChange={() => handleAddTotalSwitch()} />
+            <span className="slider"></span>
+          </label>
+          <div className="switchLabel">
+            <span className={isNewTotal ? "activeLabel" : ""}>Add</span>
+          </div>
+        </div>
         <OrangeButton size="medium" buttonText="SUBMIT" width={6} />
       </form>
     </div>

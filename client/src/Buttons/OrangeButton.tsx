@@ -5,7 +5,7 @@ interface OrangeButtonProps {
   width?: number;
   buttonText: string;
   type?: "submit" | "reset" | "button" | undefined;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export function OrangeButton(props: OrangeButtonProps): JSX.Element {
