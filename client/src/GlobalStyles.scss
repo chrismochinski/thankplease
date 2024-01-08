@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Afacad&family=Bitter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Raleway+Dots&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+// global fonts based on above imports
+$bitter: "Bitter", serif; //funky serif
+$afacad: "Afacad", sans-serif; //funky sans
+$raleway: "Raleway", sans-serif; //normal sans
+$raleway-dots: "Raleway Dots", sans-serif; //funky dot thin
+
+// global colors
+$black: #000000;
+$royal: #2d3047;
+$blood: #692627;
+$burnt: #f28f3b;
+$fancy: #93b7be;
+$pee: #eef36a;
+$skin: #ffd5c2;
+$white: #ffffff;
+$teal: #588b8b;
+$gunz: #323031;
+$sword: #9f9f9f;
+$cloud: #d3d3d3;
+
+// New colors
+$light-blue: #a3c4f3; // Soft and clear light blue
+$light-purple: #c7a2d4; // Gentle and readable light purple
+
+// global containers and layout
+.section {
+  width: 100vw;
+  height: fit-content;
+  margin-top: max(calc(1.5vw + 1.5vw), 2em);
+  margin-bottom: max(calc(1.5vw + 1.5vw), 2em);
+  padding-left: max(6vw, (100vw - 1280px)/2);
+  padding-right: max(6vw, (100vw - 1280px)/2);
+}
+
+.container {
+  container-type: inline-size;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    margin-inline: 1em;
+  }
+}
+
+.button-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & > * {
+    margin-block: 0.5em;
+  }
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-between {
+  align-items: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.align-around {
+  align-items: space-around;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.align-evenly {
+  align-items: space-evenly;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+
+// global TEXT
+.bitter {
+  font-family: $bitter;
+}
+
+.afacad {
+  font-family: $afacad;
+}
+
+.raleway {
+  font-family: $raleway;
+}
+
+.raleway-dots {
+  font-family: $raleway-dots;
+}
+
+
+// global TEXT STYLES
+.boldest {
+  font-weight: 800;
+}
+
+.bolder {
+  font-weight: 700;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.semibold {
+  font-weight: 500;
+}
+
+.medium {
+  font-weight: 400;
+}
+
+.light {
+  font-weight: 300;
+}
+
+.lighter {
+  font-weight: 200;
+}
+
+.lightest {
+  font-weight: 100;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 0.04em;
+  text-underline-offset: 0.18em;
+}
+
+.white-underline {
+  @extend .underline;
+  text-decoration-color: $white;
+}
+
+.black-underline {
+  @extend .underline;
+  text-decoration-color: $black;
+}
+
+.title {
+  @extend .bolder;
+  margin: 1em;
+  font-size: clamp(2rem, 6cqi, 3rem);
+}
+
+.subtitle {
+  @extend .bold;
+  margin: 1em;
+  font-size: clamp(1rem, 4cqi, 2rem);
+}
+
+.paragraph-text {
+  @extend .medium;
+  margin: 1em;
+  font-family: $afacad;
+  line-height: 1.25em;
+  font-size: clamp(1.125rem, 5cqi, 1.25rem);
+}
+
+// global margins and padding
+
+.m-0 {
+  margin: 0;
+}
+
+.m-small {
+  margin: 0.5em;
+}
+
+.m-medium {
+  margin: 1em;
+}
+
+.m-large {
+  margin: 2em;
+}
+
+.my-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.p-0 {
+  padding: 0;
+}
+
+.p-small {
+  padding: 0.5em;
+}
+
+.p-medium {
+  padding: 1em;
+}
+
+.p-large {
+  padding: 2em;
+}
+
+.py-auto {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.px-auto {
+  padding-left: auto;
+  padding-right: auto;
+}
+
+.gap-small {
+  gap: 0.5em;
+}
+
+.gap-medium {
+  gap: 1em;
+}
+
+.gap-large {
+  gap: 2em;
+}
+
+//inputs {
+/* Hide the arrows for number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}

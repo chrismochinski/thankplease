@@ -1,0 +1,29 @@
+@import "../src/GlobalStyles.scss";
+
+.App {
+  position: relative;
+  text-align: center;
+  color: white;
+  background-color: $cloud;
+  background-image: url('https://images.squarespace-cdn.com/content/v1/5c4248bf7c932766880f7bf0/1548225689160-73908QGGR49NBOUFLMF9/blob.gif');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  justify-content: flex-start; 
+  padding-top: 20vh;
+}
+
+// REDUCE MOTION
+@media (prefers-reduced-motion: no-preference) {
+  .App {
+    .App-header {
+      .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+      }
+    }
+  }
+}
