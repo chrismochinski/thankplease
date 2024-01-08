@@ -1,6 +1,5 @@
 import express from "express";
 import { Pool } from "pg";
-import { start } from "repl";
 
 interface NewUserAssetRequest {
   user: string;
