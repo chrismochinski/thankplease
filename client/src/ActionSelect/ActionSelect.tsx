@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { OrangeButton } from "../Buttons/OrangeButton";
 import "./ActionSelect.scss";
 import { TransactionType } from "../Home/Home";

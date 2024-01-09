@@ -82,30 +82,35 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
       <form id="multiForm" className="column" onSubmit={handleSubmit}>
         <input type="text" value={ticker} onChange={handleTickerChange} placeholder="Ticker*" />
         <input
+          id="increaseQuantityInput"
           type="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           placeholder="Increase Amount*"
         />
         <input
+          id="decreaseQuantityInput"
           type="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
           placeholder="Decrease Amount*"
         />
         <input
+          id="sourceInput"
           type="text"
           value={transactionSource}
           onChange={(e) => setTransactionSource(e.target.value)}
           placeholder="Source"
         />
         <input
+          id="activityInput"
           type="text"
           value={transactionActivity}
           onChange={(e) => setTransactionActivity(e.target.value)}
           placeholder="Activity"
         />
         <input
+          id="notesInput"
           type="text"
           value={transactionNotes}
           onChange={(e) => setTransactionNotes(e.target.value)}
