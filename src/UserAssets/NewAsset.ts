@@ -24,6 +24,8 @@ const pool = new Pool({
   port: 5432,
 });
 
+
+
 async function addNewUserAsset(ticker: string, quantity: number, user: number) {
   const client = await pool.connect();
   try {
