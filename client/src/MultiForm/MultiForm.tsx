@@ -80,9 +80,23 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
   return (
     <div id="multiFormComponent" className="">
       <form id="multiForm" className="column" onSubmit={handleSubmit}>
-        <input type="text" value={ticker} onChange={handleTickerChange} placeholder="Ticker*" />
+        <input
+          id="tickerInput"
+          className="conditionalInput"
+          type="text"
+          value={ticker}
+          onChange={handleTickerChange}
+          placeholder="Ticker*"
+        />
         <input
           id="increaseQuantityInput"
+          className={
+            transactionType === "decrease" ||
+            transactionType === "add" ||
+            transactionType === "remove"
+              ? "conditionalInput hiddenInput"
+              : "conditionalInput"
+          }
           type="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
@@ -90,6 +104,13 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
         />
         <input
           id="decreaseQuantityInput"
+          className={
+            transactionType === "increase" ||
+            transactionType === "add" ||
+            transactionType === "remove"
+              ? "conditionalInput hiddenInput"
+              : "conditionalInput"
+          }
           type="number"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
@@ -97,6 +118,11 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
         />
         <input
           id="sourceInput"
+          className={
+            transactionType === "add" || transactionType === "remove"
+              ? "conditionalInput hiddenInput"
+              : "conditionalInput"
+          }
           type="text"
           value={transactionSource}
           onChange={(e) => setTransactionSource(e.target.value)}
@@ -104,6 +130,11 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
         />
         <input
           id="activityInput"
+          className={
+            transactionType === "add" || transactionType === "remove"
+              ? "conditionalInput hiddenInput"
+              : "conditionalInput"
+          }
           type="text"
           value={transactionActivity}
           onChange={(e) => setTransactionActivity(e.target.value)}
@@ -111,12 +142,19 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
         />
         <input
           id="notesInput"
+          className="conditionalInput"
           type="text"
           value={transactionNotes}
           onChange={(e) => setTransactionNotes(e.target.value)}
           placeholder="Notes"
         />
-        <div id="switchInput" className="switchContainer">
+        <div
+          id="switchInput"
+          className={
+            transactionType === "add" || transactionType === "remove" || transactionType === "decrease"
+              ? "switchContainer hiddenInput"
+              : "switchContainer"
+          }>
           <div className="switchLabel">
             <span className={!isNewTotal ? "activeLabel" : ""}>Total</span>
           </div>

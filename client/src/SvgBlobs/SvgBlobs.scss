@@ -12,31 +12,32 @@
     transform-box: fill-box;
     opacity: 0.8;
     &#crown-blob {
-      bottom: -28%;
-      right: -32%;
-      transform: rotate(45deg);
+      bottom: -56%;
+      right: -44%;
+      transform: rotate(36deg) scaleY(1.1) scaleX(1.2);
       opacity: 1;
     }
     &#yellow-blob {
-      left: 4%;
-      bottom: -3%;
+      left: 5%;
+      bottom: -9%;
       transform: rotate(10deg);
     }
     &#sky-blob {
-      left: -8%;
-      top: 34%;
-      transform: rotate(160deg);
+      left: -6%;
+      top: 43%;
+      transform: rotate(80deg);
       opacity: 1;
     }
     &#white-blob {
     right: -16%;
-    bottom: 7%;
+    bottom: -2%;
     opacity: 1;
+    transform: rotate(160deg);
     }
     &#teal-blob {
       right: -32%;
-      bottom: -64%;
-      transform: rotate(-115deg);
+      bottom: -79%;
+      transform: rotate(194deg);
     }
   }
 }
