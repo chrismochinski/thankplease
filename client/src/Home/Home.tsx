@@ -13,7 +13,7 @@ export function Home(): JSX.Element {
   }, [transactionType]);
 
   return (
-    <div id="home">
+    <div id="home">    
       <ActionSelect transactionType={transactionType} setTransactionType={setTransactionType} />
       <MultiForm transactionType={transactionType} />
     </div>

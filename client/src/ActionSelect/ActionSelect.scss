@@ -4,5 +4,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  margin-bottom: 1.5rem;
+  padding: 1.5em 0;
+  //two columns should become 1 at 768px screen
 }
+
+// @media (max-width: 768px) {
+//   .actionSelectContainer {
+//     grid-template-columns: 1fr;
+//   }
+// }

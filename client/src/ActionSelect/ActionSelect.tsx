@@ -17,10 +17,10 @@ export function ActionSelect(props: ActionSelectProps): JSX.Element {
   
   return (
     <div className="actionSelectContainer">
-      <OrangeButton buttonText="ADD" width={6} onClick={handleActionSelectClick} />
-      <OrangeButton buttonText="INCREASE" width={6} onClick={handleActionSelectClick} />
-      <OrangeButton buttonText="DECREASE" width={6} onClick={handleActionSelectClick} />
-      <OrangeButton buttonText="REMOVE" width={6} onClick={handleActionSelectClick} />
+      <OrangeButton buttonText="ADD" width={5.25} onClick={handleActionSelectClick} />
+      <OrangeButton buttonText="INCREASE" width={5.25} onClick={handleActionSelectClick} />
+      <OrangeButton buttonText="DECREASE" width={5.25} onClick={handleActionSelectClick} />
+      <OrangeButton buttonText="REMOVE" width={5.25} onClick={handleActionSelectClick} />
     </div>
   );
 }

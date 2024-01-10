@@ -145,6 +145,9 @@ $light-purple: #c7a2d4; // Gentle and readable light purple
   font-family: $raleway-dots;
 }
 
+.z-index-top {
+  z-index: 100;
+}
 
 // global TEXT STYLES
 .boldest {

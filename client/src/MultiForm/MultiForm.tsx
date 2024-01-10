@@ -116,7 +116,7 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
           onChange={(e) => setTransactionNotes(e.target.value)}
           placeholder="Notes"
         />
-        <div className="switchContainer">
+        <div id="switchInput" className="switchContainer">
           <div className="switchLabel">
             <span className={!isNewTotal ? "activeLabel" : ""}>Total</span>
           </div>

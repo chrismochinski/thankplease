@@ -1,0 +1,42 @@
+@import "../GlobalStyles.scss";
+
+.svgBlobsContainer {
+  position: absolute;
+  width: 120vw;
+  height: 120vh;
+  overflow: hidden;
+  top: 16%;
+  svg {
+    position: absolute;
+    transform-origin: center;
+    transform-box: fill-box;
+    opacity: 0.8;
+    &#crown-blob {
+      bottom: -28%;
+      right: -32%;
+      transform: rotate(45deg);
+      opacity: 1;
+    }
+    &#yellow-blob {
+      left: 4%;
+      bottom: -3%;
+      transform: rotate(10deg);
+    }
+    &#sky-blob {
+      left: -8%;
+      top: 34%;
+      transform: rotate(160deg);
+      opacity: 1;
+    }
+    &#white-blob {
+    right: -16%;
+    bottom: 7%;
+    opacity: 1;
+    }
+    &#teal-blob {
+      right: -32%;
+      bottom: -64%;
+      transform: rotate(-115deg);
+    }
+  }
+}
