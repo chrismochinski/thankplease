@@ -14,7 +14,7 @@ export function SvgBlobs(): JSX.Element {
           {/* <linearGradient id="lg-0.010718142789625462" x1="0" x2="1" y1="0" y2="0">
             <stop stop-color="#eef36a" offset="0"></stop>
             <stop stop-color="#3D348B" offset="0.9"></stop>
-          </linearGradient> */}
+          </linearGradient> */} 
           <path d="" opacity="1" fill="#3D348B"  transform="translate(0, -30)">
             <animate
               attributeName="d"
@@ -26,7 +26,7 @@ export function SvgBlobs(): JSX.Element {
               begin="0s"
               values="M0 0L 0 794.1580682628689Q 161.5 837.8098009795896  323 804.5594799317045T 646 635.3386163195472T 969 643.7117258385255T 1292 555.4263177322398T 1615 475.609559490791L 1615 0 Z;M0 0L 0 834.9360457732997Q 161.5 782.4478584055843  323 764.6292066476514T 646 614.3251365772464T 969 543.7198621376091T 1292 411.80446859987796T 1615 281.0181046436926L 1615 0 Z;M0 0L 0 806.0124235976089Q 161.5 760.5570936562514  323 743.4233474056791T 646 573.8878590610989T 969 555.9656012360165T 1292 504.76396036454685T 1615 364.7107054391514L 1615 0 Z;M0 0L 0 794.1580682628689Q 161.5 837.8098009795896  323 804.5594799317045T 646 635.3386163195472T 969 643.7117258385255T 1292 555.4263177322398T 1615 475.609559490791L 1615 0 Z"></animate>
           </path>
-          <path d="" fill="#758190" opacity="1"  transform="translate(0, -150)">
+          <path d="" fill="#9AC4F8" opacity="1"  transform="translate(0, -150)">
             <animate
               attributeName="d"
               dur="10s"

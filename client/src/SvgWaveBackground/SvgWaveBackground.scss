@@ -1,6 +1,6 @@
 @import "../GlobalStyles.scss";
 
-.svgBlobsContainer {
+.svgWavesContainer {
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -13,8 +13,6 @@
     left: 50%;
     transform: translateX(-50%);
     height: 100%;
-    //flip horizontally and vertically
-    transform: scaleX(-1) scaleY(-1);
 
     &#wave-group-1 {
       inset: 0;
