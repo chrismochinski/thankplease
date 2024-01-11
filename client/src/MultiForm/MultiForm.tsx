@@ -22,6 +22,7 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+
     // Get current date and time
     const currentTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
     const currentDate = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
@@ -119,9 +120,7 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
         <input
           id="sourceInput"
           className={
-            transactionType === "add" || transactionType === "remove"
-              ? "conditionalInput hiddenInput"
-              : "conditionalInput"
+            transactionType === "remove" ? "conditionalInput hiddenInput" : "conditionalInput"
           }
           type="text"
           value={transactionSource}
@@ -151,7 +150,9 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
         <div
           id="switchInput"
           className={
-            transactionType === "add" || transactionType === "remove" || transactionType === "decrease"
+            transactionType === "add" ||
+            transactionType === "remove" ||
+            transactionType === "decrease"
               ? "switchContainer hiddenInput"
               : "switchContainer"
           }>

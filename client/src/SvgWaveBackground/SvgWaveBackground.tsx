@@ -1,6 +1,6 @@
-import "./SvgBlobs.scss";
+import "./SvgWaveBackground.scss";
 
-export function SvgBlobs(): JSX.Element {
+export function SvgWaveBackground(): JSX.Element {
   return (
     <div className="svgWavesContainer">
       <svg

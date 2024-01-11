@@ -12,8 +12,8 @@ export function SvgBlobs(): JSX.Element {
         viewBox="0 0 1615 891">
         <g transform="translate(807.5,445.5) scale(1.15,1.15) translate(-807.5,-445.5)">
           {/* <linearGradient id="lg-0.010718142789625462" x1="0" x2="1" y1="0" y2="0">
-            <stop stop-color="#eef36a" offset="0"></stop>
-            <stop stop-color="#3D348B" offset="0.9"></stop>
+            <stop stopColor="#eef36a" offset="0"></stop>
+            <stop stopColor="#3D348B" offset="0.9"></stop>
           </linearGradient> */} 
           <path d="" opacity="1" fill="#3D348B"  transform="translate(0, -30)">
             <animate

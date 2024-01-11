@@ -14,8 +14,10 @@
     transform: translateX(-50%);
     height: 100%;
 
-    &#wave-group-1 {
-      inset: 0;
+   g {
+    path {
+      transform-origin: center;
     }
+   }
   }
 }

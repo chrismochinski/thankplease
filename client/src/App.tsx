@@ -1,17 +1,15 @@
 import "./App.scss";
-import { FetchBasicCmcData } from "./FetchCmcData/FetchBasicCmcData";
 import { FetchCoinGeckoList } from "./FetchCoinGeckoData/FetchCoinGeckoData";
 import { Home } from "./Home/Home";
-import { SvgBlobs } from "./SvgBlobs/SvgBlobs";
+import { SvgMiddleBlob } from "./SvgMiddleBlob/SvgMiddleBlob";
 
 function App() {
   return (
     <div className="App">
-      <SvgBlobs />
+      <SvgMiddleBlob />
       <Home />
       <div className="button-row p-large align-start z-index-top">
-        {/* <FetchBasicCmcData /> */}
-        {/* <FetchCoinGeckoList /> */}
+        <FetchCoinGeckoList />
       </div>
     </div>
   );

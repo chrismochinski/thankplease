@@ -9,18 +9,43 @@ interface ActionSelectProps {
 
 export function ActionSelect(props: ActionSelectProps): JSX.Element {
   const { transactionType, setTransactionType } = props;
- 
+
   const handleActionSelectClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const buttonText = e.currentTarget.innerText.toLowerCase();
-    setTransactionType(buttonText as TransactionType);
+    if (transactionType === e.currentTarget.innerText.toLowerCase()) {
+      setTransactionType(null);
+      return;
+    } else {
+      const buttonText = e.currentTarget.innerText.toLowerCase();
+      setTransactionType(buttonText as TransactionType);
+    }
   };
-  
+
   return (
     <div className="actionSelectContainer">
-      <OrangeButton buttonText="ADD" width={5.25} onClick={handleActionSelectClick} />
-      <OrangeButton buttonText="INCREASE" width={5.25} onClick={handleActionSelectClick} />
-      <OrangeButton buttonText="DECREASE" width={5.25} onClick={handleActionSelectClick} />
-      <OrangeButton buttonText="REMOVE" width={5.25} onClick={handleActionSelectClick} />
+      <OrangeButton
+        buttonText="ADD"
+        width={5.25}
+        onClick={handleActionSelectClick}
+        selectedProp={transactionType}
+      />
+      <OrangeButton
+        buttonText="INCREASE"
+        width={5.25}
+        onClick={handleActionSelectClick}
+        selectedProp={transactionType}
+      />
+      <OrangeButton
+        buttonText="DECREASE"
+        width={5.25}
+        onClick={handleActionSelectClick}
+        selectedProp={transactionType}
+      />
+      <OrangeButton
+        buttonText="REMOVE"
+        width={5.25}
+        onClick={handleActionSelectClick}
+        selectedProp={transactionType}
+      />
     </div>
   );
 }

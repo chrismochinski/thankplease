@@ -2,14 +2,125 @@
 
 .actionSelectContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  grid-template-columns: 6fr 6fr;
+  gap: 10px;
   padding: 1.5em 0;
-  //two columns should become 1 at 768px screen
+  .orangeButtonContainer {
+    .orangeButton {
+      transform: scale(1);
+      transition: transform 250ms ease-out;
+      .buttonText {
+        transition: transform 250ms ease-out;
+        transform: scale(1);
+      }
+      &.add-button {
+        transform-origin: 0% 0%;
+        &.add-selected {
+          transform: scale(1.175, 1.25);
+          .buttonText {
+            transform: scale(1, 0.9125);
+          }
+        }
+        &.increase-selected {
+          transform: scale(0.834, 1.02);
+          .buttonText {
+            transform: scale(1, 0.81);
+          }
+        }
+        &.decrease-selected {
+          transform: scale(1.175, 0.8);
+          .buttonText {
+            transform: scale(0.65, 1);
+          }
+        }
+        &.remove-selected {
+          transform: scale(0.834, 1.02);
+          .buttonText {
+            transform: scale(1, 0.81);
+          }
+        }
+      }
+      &.increase-button {
+        transform-origin: 100% 0%;
+        &.add-selected {
+          transform: scale(0.834, 1.02);
+          .buttonText {
+            transform: scale(1, 0.81);
+          }
+        }
+        &.increase-selected {
+          transform: scale(1.175, 1.25);
+          .buttonText {
+            transform: scale(1, 0.9125);
+          }
+        }
+        &.decrease-selected {
+          transform: scale(0.834, 1.02);
+          .buttonText {
+            transform: scale(1, 0.81);
+          }
+        }
+        &.remove-selected {
+          transform: scale(1.175, 0.8);
+          .buttonText {
+            transform: scale(0.65, 1);
+          }
+        }
+      }
+      &.decrease-button {
+        transform-origin: 0% 100%;
+        &.add-selected {
+          transform: scale(1.175, 0.8);
+          .buttonText {
+            transform: scale(0.65, 1);
+          }
+        }
+        &.increase-selected {
+          transform: scale(0.834, 1.02);
+          .buttonText {
+            transform: scale(1, 0.81);
+          }
+        }
+        &.decrease-selected {
+          transform: scale(1.175, 1.25);
+          .buttonText {
+            transform: scale(1, 0.9125);
+          }
+        }
+        &.remove-selected {
+          transform: scale(0.834, 1.02);
+          .buttonText {
+            transform: scale(1, 0.81);
+          }
+        }
+      }
+      &.remove-button {
+        transform-origin: 100% 100%;
+        &.add-selected {
+          transform: scale(0.834, 1.02);
+          .buttonText {
+            transform: scale(1, 0.81);
+          }
+        }
+        &.increase-selected {
+          transform: scale(1.175, 0.8);
+          .buttonText {
+            transform: scale(0.65, 1);
+          }
+        }
+        &.decrease-selected {
+          transform: scale(0.834, 1.02);
+          .buttonText {
+            transform: scale(1, 0.81);
+          }
+        }
+        &.remove-selected {
+          transform: scale(1.175, 1.25);
+          .buttonText {
+            transform: scale(1, 0.9125);
+          }
+        }
+      }
+    }
+  }
 }
-
-// @media (max-width: 768px) {
-//   .actionSelectContainer {
-//     grid-template-columns: 1fr;
-//   }
-// }
