@@ -14,10 +14,8 @@ export function OrangeButton(props: OrangeButtonProps): JSX.Element {
 
   function handleSelected() {
     if (selectedProp === null) {
-      console.log("selectedProp is null");
       return "none-selected";
     } else if (selectedProp !== null) {
-      console.log("selectedProp is not null");
       return selectedProp + "-selected";
     }
   }
