@@ -16,7 +16,7 @@ export function OrangeButton(props: OrangeButtonProps): JSX.Element {
     if (selectedProp === null) {
       return "none-selected";
     } else if (selectedProp !== null) {
-      return selectedProp + "-selected";
+      return selectedProp + "-selected selected-button";
     }
   }
 
@@ -25,11 +25,15 @@ export function OrangeButton(props: OrangeButtonProps): JSX.Element {
       <button
         onClick={onClick}
         className={`orangeButton size-${size} ${buttonText.toLowerCase()}-button
-        ${handleSelected()}`}
+        ${handleSelected()} ${
+          selectedProp !== null &&
+          selectedProp + "-selected" !== `${buttonText.toLowerCase()}-selected`
+            ? "not-selected"
+            : ""
+        }`}
         type={type}
         style={width ? { width: `${width * 2}rem` } : {}}>
-
-        <div className={`${buttonText}-text buttonText`}>{buttonText}</div>
+        <div className={`${buttonText.toLowerCase()}-text buttonText`}>{buttonText}</div>
       </button>
     </div>
   );

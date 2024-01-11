@@ -80,7 +80,7 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
 
   return (
     <div id="multiFormComponent" className="">
-      <form id="multiForm" className="column" onSubmit={handleSubmit}>
+      <form id="multiForm" className={`column ${transactionType === null ? "no-transaction-type" : ""}`} onSubmit={handleSubmit}>
         <input
           id="tickerInput"
           className="conditionalInput"

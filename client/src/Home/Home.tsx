@@ -6,7 +6,7 @@ import { MultiForm } from "../MultiForm/MultiForm";
 export type TransactionType = "add" | "increase" | "decrease" | "remove" | null;
 
 export function Home(): JSX.Element {
-  const [transactionType, setTransactionType] = useState<TransactionType>(null)
+  const [transactionType, setTransactionType] = useState<TransactionType>("add")
 
   useEffect(() => {
     console.log("FROM HOME transactionType:", transactionType)
