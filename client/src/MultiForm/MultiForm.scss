@@ -20,13 +20,6 @@
     border-radius: 0.5em;
     transition: all 250ms ease-out;
     
-    // &.no-transaction-type {
-    //   height: 0px;
-    //   padding-block: 0;
-    //   margin-block: 0;
-    //   opacity: 0;
-    //   transform: scaleY(0);
-    // } //revisit
     input {
       &[type="text"],
       &[type="number"] {
