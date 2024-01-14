@@ -66,7 +66,7 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
     setIsNewTotal(false);
   };
 
-  // HANDLE SWITCH: //revisit swtitch
+  // HANDLE SWITCH:
   const handleAddTotalSwitch = () => {
     console.log("switched!");
     console.log("SETTING TO:", !isNewTotal);
