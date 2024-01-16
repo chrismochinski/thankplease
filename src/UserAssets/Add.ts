@@ -1,4 +1,5 @@
 import express from "express";
+import { request } from "http";
 import { Pool } from "pg";
 
 interface NewUserAssetRequest {
@@ -10,7 +11,7 @@ interface NewUserAssetRequest {
   dateOfTransaction: string;
   timeOfTransaction: string;
   timeZoneOfTransaction: string;
-  notes: string;
+  transactionNotes: string;
 }
 
 // Initialize the router
@@ -54,6 +55,7 @@ async function addNewUserAsset(ticker: string, quantity: number, user: number) {
 async function recordTransaction(requestData: NewUserAssetRequest, user: number) {
   const client = await pool.connect();
   try {
+    console.log('requestData.notes', requestData.transactionNotes)
     await client.query(
       `
       INSERT INTO user_transactions 
@@ -67,7 +69,7 @@ async function recordTransaction(requestData: NewUserAssetRequest, user: number)
         requestData.transactionType,
         new Date(`${requestData.dateOfTransaction} ${requestData.timeOfTransaction}`),
         requestData.timeZoneOfTransaction,
-        'New asset via New Asset Form - APP BUILDING IN PROGRESS'
+        requestData.transactionNotes,
       ]
     );
   } catch (error) {
@@ -77,11 +79,15 @@ async function recordTransaction(requestData: NewUserAssetRequest, user: number)
   }
 }
 
-router.post("/new-user-asset", async (req, res) => {
+/**
+ * 
+ */
+router.post("/add-asset", async (req, res) => {
   const requestData: NewUserAssetRequest = req.body;
 
   try {
     const userRes = await pool.query("SELECT id FROM users WHERE username = $1", [requestData.user]);
+    console.log('request data user', requestData)
     if (userRes.rows.length === 0) {
       return res.status(400).json({ message: "User not found" });
     }

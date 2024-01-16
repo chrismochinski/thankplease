@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import express from "express";
 import cors from "cors";
-import userAssetsRouter from './UserAssets/NewAsset'; 
+import add from './UserAssets/Add'; 
 import coinMarketCapRouter from './CoinMarketCap/CoinMarketCap';
 import coinGeckoRouter from './CoinGecko/CoinGecko';
 
@@ -11,7 +11,7 @@ app.use(express.json());
 const port = 3001;
 
 // ROUTER LIST
-app.use('/api/user-assets', userAssetsRouter); 
+app.use('/api/add', add); 
 
 // API ROUTES
 app.use('/api/cmc', coinMarketCapRouter);

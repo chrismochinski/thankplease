@@ -7,10 +7,11 @@ interface OrangeButtonProps {
   type?: "submit" | "reset" | "button" | undefined;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   selectedProp?: string | null;
+  className?: string;
 }
 
 export function OrangeButton(props: OrangeButtonProps): JSX.Element {
-  const { buttonText, type = "submit", size = "medium", width, onClick, selectedProp } = props;
+  const { buttonText, type = "submit", size = "medium", width, onClick, selectedProp, className } = props;
 
   function handleSelected() {
     if (selectedProp === null) {
@@ -24,7 +25,7 @@ export function OrangeButton(props: OrangeButtonProps): JSX.Element {
     <div className={`orangeButtonContainer ${handleSelected()}`}>
       <button
         onClick={onClick}
-        className={`orangeButton size-${size} ${buttonText.toLowerCase()}-button
+        className={`${className} orangeButton size-${size} ${buttonText.toLowerCase()}-button
         ${handleSelected()} ${
           selectedProp !== null &&
           selectedProp + "-selected" !== `${buttonText.toLowerCase()}-selected`
