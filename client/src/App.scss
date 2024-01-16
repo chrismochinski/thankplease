@@ -4,7 +4,8 @@
   position: relative;
   text-align: center;
   color: white;
-  background-color: $blood;
+  // background-color: $blood;
+  background: linear-gradient(to bottom, $black 10%, $blood 40%, $blood 65%, $black 88%);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;

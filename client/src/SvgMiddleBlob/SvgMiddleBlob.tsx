@@ -12,19 +12,20 @@ export function SvgMiddleBlob(): JSX.Element {
         viewBox="0 0 1290 533">
         <g transform="translate(645,266.5) scale(1,1) translate(-645,-266.5)">
           <linearGradient id="redGradient" x1="0" x2="0" y1="0.4" y2="1">
-            <stop stopColor="#580e1a" offset="0"></stop>
+            <stop stopColor="#580e1a00" offset="0"></stop>
+            <stop stopColor="#580e1a" offset="0.5"></stop>
             <stop stopColor="#580e1a00" offset="1"></stop>
           </linearGradient>
           <linearGradient id="tealGradient" x1="0" x2="0" y1="0.4" y2="1">
-            <stop stopColor="#4ECDC4" offset="0"></stop>
-            <stop stopColor="#4ecdc500" offset="1"></stop>
+            <stop stopColor="#4ECDC4" offset="0.2"></stop>
+            <stop stopColor="#4ecdc500" offset="0.8"></stop>
           </linearGradient>
           <linearGradient id="yellowGradient" x1="0" x2="0" y1="0.4" y2="1">
-            <stop stopColor="#eef36a" offset="0"></stop>
-            <stop stopColor="#eef36a00" offset="1"></stop>
+            <stop stopColor="#eef36a00" offset="0.2"></stop>
+            <stop stopColor="#eef36a" offset="0.8"></stop>
           </linearGradient>
           <linearGradient id="whiteGradient" x1="0" x2="0" y1="0.4" y2="1">
-            <stop stopColor="#FFFFFF" offset="0"></stop>
+            <stop stopColor="#FFFFFF" offset="0.2"></stop>
             <stop stopColor="#FFFFFF00" offset="1"></stop>
           </linearGradient>
           <linearGradient id="orangeGradient" x1="0" x2="0" y1="1" y2="0.4">
