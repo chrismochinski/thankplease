@@ -1,27 +1,22 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.scss";
-import { FetchCoinGeckoList } from "./FetchCoinGeckoData/FetchCoinGeckoData";
+//import everything form react router to build this into a route file
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./Home/Home";
 import { Market } from "./Market/Market";
+import { FetchCoinGeckoList } from "./FetchCoinGeckoData/FetchCoinGeckoData";
 import { SvgMiddleBlob } from "./SvgMiddleBlob/SvgMiddleBlob";
 
 function App() {
   return (
-    <Router>
-
     <div className="App">
       <SvgMiddleBlob />
+      <BrowserRouter>
       <Routes>
-
-      <Route path="/" element={<Home />} />
-      <Route path="/market" element={<Market />} />
-      <div className="button-row p-large align-start z-index-top">
-        
-        <FetchCoinGeckoList />
-      </div>
+        <Route path="/" element={<Home />} />
+        <Route path="/market" element={<Market />} />
       </Routes>
+      </BrowserRouter>
     </div>
-    </Router>
   );
 }
 

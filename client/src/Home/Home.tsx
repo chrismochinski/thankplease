@@ -2,20 +2,24 @@ import { useState, useEffect } from "react";
 import "./Home.scss";
 import { ActionSelect } from "../ActionSelect/ActionSelect";
 import { MultiForm } from "../MultiForm/MultiForm";
+import { FetchCoinGeckoList } from "../FetchCoinGeckoData/FetchCoinGeckoData";
 
 export type TransactionType = "add" | "increase" | "decrease" | "remove" | null;
 
 export function Home(): JSX.Element {
-  const [transactionType, setTransactionType] = useState<TransactionType>("add")
+  const [transactionType, setTransactionType] = useState<TransactionType>("add");
 
   useEffect(() => {
-    console.log("FROM HOME transactionType:", transactionType)
+    console.log("FROM HOME transactionType:", transactionType);
   }, [transactionType]);
 
   return (
-    <div id="home">    
+    <div id="home">
       <ActionSelect transactionType={transactionType} setTransactionType={setTransactionType} />
       <MultiForm transactionType={transactionType} />
+      <div className="m-large">
+        <FetchCoinGeckoList />
+      </div>
     </div>
   );
 }

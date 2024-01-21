@@ -21,7 +21,6 @@ export function FetchCoinGeckoList(): JSX.Element {
         buttonText="COINGECKO LIST"
         width={8}
         onClick={fetchCoinGeckoListData}
-        // href="/market"
       />
       {fetchCoinGeckoListSuccess && <p className="paragraph-text">Success! CONSOLE 👀 👉.</p>}{" "}
     </div>
