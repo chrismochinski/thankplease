@@ -10,10 +10,12 @@ interface OrangeButtonProps {
   href?: string;
   selectedProp?: string | null;
   className?: string;
+  leftIcon?: JSX.Element;
+  rightIcon?: JSX.Element;
 }
 
 export function OrangeButton(props: OrangeButtonProps): JSX.Element {
-  const { buttonText, type = "submit", size = "medium", width, onClick, href, selectedProp, className } = props;
+  const { buttonText, type = "submit", size = "medium", width, onClick, href, selectedProp, className, leftIcon, rightIcon } = props;
 
   function handleSelected() {
     if (selectedProp === null) {
@@ -37,7 +39,11 @@ export function OrangeButton(props: OrangeButtonProps): JSX.Element {
         }`}
         type={type}
         style={width ? { width: `${width * 2}rem` } : {}}>
-        <div className={`${buttonText.toLowerCase()}-text buttonText`}>{buttonText}</div>
+        <div className={`${buttonText.toLowerCase()}-text buttonText orangeButtonInner`}>
+          {leftIcon && leftIcon}
+          {buttonText}
+          {rightIcon && rightIcon}
+          </div>
       </button>
       </Link>
     </div>
