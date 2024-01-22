@@ -1,9 +1,11 @@
-import './Market.scss'
+import "./Market.scss";
 
-export function  Market(): JSX.Element {
-    return (
-        <div>
-            <h1>Market</h1>
-        </div>
-    )
+export function Market(): JSX.Element {
+  return (
+    <div className="marketPageWrapper">
+      <div className="tableWrapper">
+        <h1 className="subtitle afacad">Current Market Stats</h1>
+      </div>
+    </div>
+  );
 }
