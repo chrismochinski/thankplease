@@ -8,9 +8,9 @@
   .orangeButtonContainer {
     .orangeButton {
       transform: scale(1);
-      transition: transform 250ms ease-out, opacity 250ms ease-out, background-color 250ms ease-out;
+      transition: transform 200ms ease-out, opacity 200ms ease-out, background-color 200ms ease-out;
       .buttonText {
-        transition: transform 250ms ease-out, color 250ms ease-out;
+        transition: transform 200ms ease-out, color 200ms ease-out;
         transform: scale(1);
       }
       &.add-button {
@@ -122,7 +122,7 @@
         }
       }
       &.not-selected {
-        opacity: 0.8;
+        // opacity: 0.6;
       }
       &:not(.not-selected, .none-selected) {
         background-color: $royal;
