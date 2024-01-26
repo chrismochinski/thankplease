@@ -1,30 +1,52 @@
+import { useState, useEffect } from "react";
 import { ChevronLeft } from "lucide-react";
 import { OrangeButton } from "../Buttons/OrangeButton";
 import "./Market.scss";
 
 export function Market(): JSX.Element {
+  const [isLoading, setIsLoading] = useState(true);
+  const [coinData, setCoinData] = useState<any>([]);
+  const [error, setError] = useState('');
+
+
+  const fetchCoinGeckoMarketData = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/api/coingecko/markets");
+      const data = await response.json();
+      if (Array.isArray(data)) {
+        setCoinData(data);
+      } else {
+        setError('Failed to fetch market data');
+        console.error("Error in response:", data);
+      }
+    } catch (error) {
+      setError("Error fetching crypto data");
+      console.error("Error fetching crypto data:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    console.log('loading and fetching...')
+    fetchCoinGeckoMarketData();
+  }, []);
+
+
   return (
     <div className="marketPageWrapper">
       <div className="tableWrapper">
-        <h1 className="subtitle afacad">Current Market Stats</h1>
-        <p className="paragraph-text">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum delectus, non aspernatur
-          nostrum earum alias porro incidunt ducimus officia illum quisquam asperiores. Quod
-          blanditiis, accusantium minus dignissimos fugit magni dicta sunt reiciendis recusandae
-          assumenda illo sed nesciunt nostrum? Sequi ex consequuntur iure officiis dolorem pariatur
-          autem maxime ab repudiandae exercitationem repellendus earum at laboriosam porro voluptate
-          obcaecati cupiditate, ullam, sint itaque et unde ea! Dicta nihil quam ratione vero ea
-          recusandae sit soluta ipsum quod quaerat, repudiandae at sunt eligendi beatae, fugit
-          repellendus eum veniam esse. Dolorem excepturi animi, nobis mollitia est magni cumque
-          exercitationem similique voluptatum, itaque sed. Totam.
-        </p>
-        <div className="m-large">
+        <div className="cornerBackButtonWrapper">
           <OrangeButton
             buttonText="back"
             size="tiny"
             href="/"
             leftIcon={<ChevronLeft size={18} />}
           />
+        </div>
+        <h1 className="title afacad">Current Market Stats</h1>
+        <div className="tableDataWrapper">
+          
         </div>
       </div>
     </div>

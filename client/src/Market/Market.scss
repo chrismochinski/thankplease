@@ -9,10 +9,28 @@
     border-radius: 18px;
     inset: 0;
     margin: auto;
-    width: clamp(280px, 60vw, 700px);
-    height: fit-content;
+    width: clamp(280px, 70vw, 800px);
+    height: 50vh;
+    overflow: scroll;
     background-color: $gunz;
     opacity: 0.8666;
     backdrop-filter: blur(8px);
+    .cornerBackButtonWrapper {
+      
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 1em 1.5em;
+      
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+     
+    }
+    .tableDataWrapper {
+
+    }
   }
 }

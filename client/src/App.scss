@@ -4,7 +4,6 @@
   position: relative;
   text-align: center;
   color: white;
-  // background-color: $blood;
   background: linear-gradient(to bottom, $black 10%, $blood 40%, $blood 65%, $black 88%);
   background-size: cover;
   background-position: center center;
@@ -16,6 +15,26 @@
   justify-content: center; 
   overflow: hidden;
 }
+
+
+
+/* Fade Transition Styles */
+// .fade-enter {
+//   opacity: 0;
+//   z-index: 1;
+// }
+// .fade-enter.fade-enter-active {
+//   opacity: 1;
+//   transition: opacity 300ms ease-in;
+// }
+// .fade-exit {
+//   opacity: 1;
+// }
+// .fade-exit.fade-exit-active {
+//   opacity: 0;
+//   transition: opacity 300ms ease-in;
+// }
+
 
 // REDUCE MOTION
 @media (prefers-reduced-motion: no-preference) {
