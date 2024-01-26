@@ -6,8 +6,7 @@ import "./Market.scss";
 export function Market(): JSX.Element {
   const [isLoading, setIsLoading] = useState(true);
   const [coinData, setCoinData] = useState<any>([]);
-  const [error, setError] = useState('');
-
+  const [error, setError] = useState("");
 
   const fetchCoinGeckoMarketData = async () => {
     try {
@@ -15,8 +14,9 @@ export function Market(): JSX.Element {
       const data = await response.json();
       if (Array.isArray(data)) {
         setCoinData(data);
+        console.log("HERE BE DATA:", data);
       } else {
-        setError('Failed to fetch market data');
+        setError("Failed to fetch market data");
         console.error("Error in response:", data);
       }
     } catch (error) {
@@ -28,10 +28,9 @@ export function Market(): JSX.Element {
   };
 
   useEffect(() => {
-    console.log('loading and fetching...')
+    console.log("loading and fetching...");
     fetchCoinGeckoMarketData();
   }, []);
-
 
   return (
     <div className="marketPageWrapper">
@@ -45,9 +44,9 @@ export function Market(): JSX.Element {
           />
         </div>
         <h1 className="title afacad">Current Market Stats</h1>
-        <div className="tableDataWrapper">
-          
-        </div>
+        <OrangeButton buttonText="REFRESH" size="small" onClick={fetchCoinGeckoMarketData} />
+
+        <div className="tableDataWrapper"></div>
       </div>
     </div>
   );
