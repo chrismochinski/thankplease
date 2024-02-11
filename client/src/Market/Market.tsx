@@ -16,7 +16,7 @@ export function Market(): JSX.Element {
         setCoinData(data);
         console.log("HERE BE DATA:", data);
       } else {
-        setError("Failed to fetch market data");
+        setError("Failed to fetch market data 🙁");
         console.error("Error in response:", data);
       }
     } catch (error) {
@@ -46,7 +46,32 @@ export function Market(): JSX.Element {
         <h1 className="title afacad">Current Market Stats</h1>
         <OrangeButton buttonText="REFRESH" size="small" onClick={fetchCoinGeckoMarketData} />
 
-        <div className="tableDataWrapper"></div>
+        <div className="tableDataWrapper">
+          {/* display the id, symbol, and current_price for each item in array, which is always a total of 20 items, in a TABLE */}
+
+          {isLoading && <p className="loadingText">Loading...</p>}
+          {error && <p className="errorText">{error}</p>}
+          {!isLoading && !error && (
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Symbol</th>
+                  <th>Current Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                {coinData.map((coin: any) => (
+                  <tr key={coin.id}>
+                    <td>{coin.id}</td>
+                    <td>{coin.symbol}</td>
+                    <td>{coin.current_price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
       </div>
     </div>
   );

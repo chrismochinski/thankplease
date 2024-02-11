@@ -33,7 +33,12 @@
       margin: 0.5em 0 6px;
     }
     .tableDataWrapper {
-
+      .errorText {
+          @extend .paragraph-text;
+          color: $pee;
+          font-weight: 500;
+          opacity: 1;
+      }
     }
   }
 }
