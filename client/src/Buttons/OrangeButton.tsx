@@ -30,7 +30,7 @@ export function OrangeButton(props: OrangeButtonProps): JSX.Element {
       <Link to={href ? href : ""}>
       <button
         onClick={onClick}
-        className={`${className} orangeButton size-${size} ${buttonText.toLowerCase()}-button
+        className={`${className} paragraph-text orangeButton size-${size} ${buttonText.toLowerCase()}-button
         ${handleSelected()} ${
           selectedProp !== null &&
           selectedProp + "-selected" !== `${buttonText.toLowerCase()}-selected`

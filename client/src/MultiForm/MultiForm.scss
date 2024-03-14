@@ -1,4 +1,4 @@
-@import "../GlobalStyles.scss";
+@import "../Variables.scss";
 
 #multiFormComponent {
   position: relative;
@@ -6,7 +6,6 @@
   margin-inline: auto;
   h2 {
     @extend .raleway;
-    @extend .white-underline;
     font-weight: 200;
     color: $white;
     text-align: center;
@@ -24,7 +23,10 @@
     input {
       &[type="text"],
       &[type="number"] {
-        @extend .paragraph-text;
+        font-family: $afacad;
+        line-height: 1.25em;
+        font-size: clamp(1.125rem, 5cqi, 1.25rem);
+        font-weight: 400;
         background-color: transparent;
         border: none;
         border-bottom: 1px solid $white;
@@ -32,6 +34,7 @@
         margin: 0.5em;
         padding: 0.35em;
         letter-spacing: 0.03em;
+        
         &:focus {
           outline: none;
         }
@@ -65,7 +68,11 @@
       height: fit-content;
       font-size: clamp(1.125rem, 8cqi, 1.5rem);
       p {
-        @extend .paragraph-text;
+        font-family: $afacad;
+        line-height: 1.25em;
+        font-size: clamp(1.125rem, 5cqi, 1.25rem);
+        font-weight: 400;
+        text-decoration: none;
         padding: 0;
         margin: 0;
         letter-spacing: 0.03em;
@@ -148,7 +155,11 @@
       }
 
       .switchLabel {
-        @extend .paragraph-text;
+        font-weight: 400;
+        font-family: $afacad;
+        text-decoration: none;
+        line-height: 1.25em;
+        font-size: clamp(1.125rem, 5cqi, 1.25rem);
         width: 54px;
         display: flex;
         margin: 0;

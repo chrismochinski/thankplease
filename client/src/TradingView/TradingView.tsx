@@ -5,11 +5,14 @@ export function TradingView() {
   const container = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
-    script.type = "text/javascript";
-    script.async = true;
-    script.innerHTML = `
+    if (container.current && container.current.children.length === 0) {
+      console.log("container is empty, appending script");
+
+      const script = document.createElement("script");
+      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
+      script.type = "text/javascript";
+      script.async = true;
+      script.innerHTML = `
         {
           "symbols": [
             [
@@ -66,16 +69,16 @@ export function TradingView() {
           "wickUpColor": "#22ab94",
           "wickDownColor": "#f7525f"
         }`;
-    if (container.current) {
-      console.log("appending!");
-      (container.current as HTMLElement).appendChild(script);
+      if (container.current) {
+        console.log("appending!");
+        (container.current as HTMLElement).appendChild(script);
+      }
     }
   }, []);
 
   return (
-    <div className="tradingview-widget-container z-index-top" ref={container}>
-      <div className="tradingview-widget-container__widget"></div>
-      <div className="tradingview-widget-copyright"></div>
+    <div className="tradingViewWidget">
+      <div className="tradingview-widget-container z-index-top" ref={container}></div>
     </div>
   );
 }

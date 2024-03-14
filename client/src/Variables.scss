@@ -1,0 +1,46 @@
+
+// global fonts based on above imports
+$bitter: "Bitter", serif; //funky serif
+$afacad: "Afacad", sans-serif; //funky sans
+$raleway: "Raleway", sans-serif; //normal sans
+$raleway-dots: "Raleway Dots", sans-serif; //funky dot thin
+
+// global colors
+$black: #191716;
+$blood: #66101F;
+$burnt: #f28f3b;
+$teal: #4ECDC4;
+$pee: #eef36a;
+$crown: #3D348B;
+$white: #ffffff;
+$royal: #5171A5;
+$sky: #758190;
+$gunz: #323031;
+$sword: #9f9f9f;
+$cloud: #d3d3d3;
+
+// New colors
+$light-blue: #a3c4f3; // Soft and clear light blue
+$light-purple: #c7a2d4; // Gentle and readable light purple
+
+
+// global TEXT
+.bitter {
+    font-family: $bitter;
+  }
+  
+  .afacad {
+    font-family: $afacad;
+  }
+  
+  .raleway {
+    font-family: $raleway;
+  }
+  
+  .raleway-dots {
+    font-family: $raleway-dots;
+  }
+  
+  .z-index-top {
+    z-index: 100;
+  }

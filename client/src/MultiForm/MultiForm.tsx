@@ -80,7 +80,7 @@ export function MultiForm(props: MultiFormProps): JSX.Element {
   };
 
   return (
-    <div id="multiFormComponent" className="">
+    <div id="multiFormComponent">
       <form
         id="multiForm"
         className={`column ${transactionType === null ? "no-transaction-type" : ""}`}

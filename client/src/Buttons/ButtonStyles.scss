@@ -1,9 +1,9 @@
-@import "../GlobalStyles.scss";
+@import "../Variables.scss";
 
 .orangeButtonContainer {
   margin: 0;
   .orangeButton {
-    @extend .paragraph-text;
+    // @extend .paragraph-text;
     background-color: $burnt;
     border: none;
     border-radius: 6px;

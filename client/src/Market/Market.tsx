@@ -50,21 +50,21 @@ export function Market(): JSX.Element {
           {/* display the id, symbol, and current_price for each item in array, which is always a total of 20 items, in a TABLE */}
 
           {isLoading && <p className="loadingText">Loading...</p>}
-          {error && <p className="errorText">{error}</p>}
+          {error && <p className="errorText paragraph-text">{error}</p>}
           {!isLoading && !error && (
             <table className="marketTable">
               <thead>
                 <tr>
-                  <th>ID</th>
-                  <th>Symbol</th>
-                  <th>Current Price</th>
+                  <th className="paragraph-text">ID</th>
+                  <th className="paragraph-text">Symbol</th>
+                  <th className="paragraph-text">Current Price</th>
                 </tr>
               </thead>
               <tbody>
                 {coinData.map((coin: any) => (
                   <tr key={coin.id}>
                     <td>{coin.id}</td>
-                    <td>{coin.symbol}</td>
+                    <td className="coinSymbol">{coin.symbol}</td>
                     <td>${coin.current_price.toFixed(2)}</td>
                   </tr>
                 ))}

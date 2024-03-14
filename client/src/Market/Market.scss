@@ -1,4 +1,4 @@
-@import "../GlobalStyles.scss";
+@import "../Variables.scss";
 
 .marketPageWrapper {
   position: relative;
@@ -39,7 +39,7 @@
       padding-top: 2em;
       align-items: center;
       .errorText {
-        @extend .paragraph-text;
+        // @extend .paragraph-text;
         margin: auto;
 
         color: $pee;
@@ -51,7 +51,7 @@
       .marketTable {
         width: 100%;
         thead tr th {
-          @extend .paragraph-text;
+          // @extend .paragraph-text;
           font-size: 1.5em;
           font-weight: 600;
           color: $pee;
