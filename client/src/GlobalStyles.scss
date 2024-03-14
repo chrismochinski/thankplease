@@ -79,6 +79,14 @@ $light-purple: #c7a2d4; // Gentle and readable light purple
   align-items: center;
 }
 
+.flex-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .justify-center {
   justify-content: center;
 }

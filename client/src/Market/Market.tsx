@@ -52,7 +52,7 @@ export function Market(): JSX.Element {
           {isLoading && <p className="loadingText">Loading...</p>}
           {error && <p className="errorText">{error}</p>}
           {!isLoading && !error && (
-            <table>
+            <table className="marketTable">
               <thead>
                 <tr>
                   <th>ID</th>

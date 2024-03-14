@@ -17,8 +17,9 @@ export function Home(): JSX.Element {
     <div id="home">
       <ActionSelect transactionType={transactionType} setTransactionType={setTransactionType} />
       <MultiForm transactionType={transactionType} />
-      <div className="m-large">
+      <div className="m-large column gap-small">
         <OrangeButton buttonText="MARKET DATA" width={8} href="/market" />
+        <OrangeButton buttonText="TradingView" width={8} href="/tradingview"/>
       </div>
     </div>
   );
