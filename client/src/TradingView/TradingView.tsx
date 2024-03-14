@@ -67,20 +67,16 @@ export function TradingView() {
           "wickDownColor": "#f7525f"
         }`;
     if (container.current) {
+      console.log("appending!");
       (container.current as HTMLElement).appendChild(script);
     }
   }, []);
 
   return (
-  
-
     <div className="tradingview-widget-container z-index-top" ref={container}>
       <div className="tradingview-widget-container__widget"></div>
-      <div className="tradingview-widget-copyright">
-      
-      </div>
+      <div className="tradingview-widget-copyright"></div>
     </div>
-
   );
 }
 

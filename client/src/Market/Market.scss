@@ -35,7 +35,8 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
+      padding-top: 2em;
       align-items: center;
       .errorText {
         @extend .paragraph-text;
@@ -52,7 +53,7 @@
         thead tr th {
           @extend .paragraph-text;
           font-size: 1.5em;
-          font-weight: 500;
+          font-weight: 600;
           color: $pee;
           text-align: center;
         }

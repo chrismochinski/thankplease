@@ -65,7 +65,7 @@ export function Market(): JSX.Element {
                   <tr key={coin.id}>
                     <td>{coin.id}</td>
                     <td>{coin.symbol}</td>
-                    <td>{coin.current_price}</td>
+                    <td>${coin.current_price.toFixed(2)}</td>
                   </tr>
                 ))}
               </tbody>
